@@ -56,20 +56,26 @@ input[type=text] {
   border-radius: 10px; /* Rounded corners */
   box-shadow: 8px 8px 15px #a3a3a3, /* Dark shadow on bottom right */
               -8px -8px 15px #ffffff; /* Light shadow on top left */
-  padding: 10px 15px; /* Padding inside the input box */
-  margin: 10px 0; /* Margin around the input box */
+  /* padding: 10px 15px; 
+  margin: 10px 0;  */
+  padding: 0.8em;
+  margin: 0.5em 0;
+  font-size: 1em;
 }
 
 /* Neumorphic Design for Button Elements */
 button {
+  min-height: 44px; /* Minimum touch target height */
+  box-sizing: border-box;
   background: #e0e0e0; /* Light grey background */
   font-family: 'Poppins', sans-serif;
   border: none; /* No border */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 8px 8px 15px #a3a3a3, /* Dark shadow on bottom right */
               -8px -8px 15px #ffffff; /* Light shadow on top left */
-  padding: 10px 20px; /* Padding inside the button */
-  margin: 10px; /* Margin around the button */
+  padding: 0.8em 1.2em; /* Adjust as needed */
+  margin: 0.5em; /* Responsive margin */
+  font-size: 1em;
   cursor: pointer; /* Cursor changes to pointer on hover */
   transition: 0.3s; /* Smooth transition for hover effects */
 }
@@ -79,8 +85,17 @@ button:hover {
               inset -8px -8px 15px #ffffff; /* Inset shadow on hover */
 }
 
+@media (max-width: 600px) {
+  button {
+    width: 100%; /* Full width on small screens */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+}
+
+
 /* CSS for the container */
 .container {
+    font-size: 2vh;
     width: 700px; /* Adjust the width as needed */
     margin: 0 auto; /* Center the container */
     text-align: left; /* Keep content aligned to the left */
