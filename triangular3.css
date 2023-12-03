@@ -1,0 +1,87 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0e5ec;
+}
+
+.links {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.link {
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  margin: 10px;
+  position: relative;
+}
+
+.link h1 {
+  font-size: 2em; /* Adjust as needed */
+  margin: 0; /* Remove default margin */
+  line-height: 1.2; /* Adjust for proper line height */
+  color: #000000; /* Font color */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.underline {
+  display: inline-block; /* To contain the h1 properly */
+  border: 2px solid transparent;
+}
+.underline::after {
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: #0056b3;
+  content: " ";
+  position: absolute;
+  top: 100%; /* Adjust to sit below the h1 */
+  left: 50%;
+  transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.underline:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+
+/* Neumorphic Design for Text Input Boxes */
+input[type=text] {
+  background: #e0e0e0; /* Light grey background */
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 8px 8px 15px #a3a3a3, /* Dark shadow on bottom right */
+              -8px -8px 15px #ffffff; /* Light shadow on top left */
+  padding: 10px 15px; /* Padding inside the input box */
+  margin: 10px 0; /* Margin around the input box */
+}
+
+/* Neumorphic Design for Button Elements */
+button {
+  background: #e0e0e0; /* Light grey background */
+  font-family: 'Poppins', sans-serif;
+  border: none; /* No border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 8px 8px 15px #a3a3a3, /* Dark shadow on bottom right */
+              -8px -8px 15px #ffffff; /* Light shadow on top left */
+  padding: 10px 20px; /* Padding inside the button */
+  margin: 10px; /* Margin around the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  transition: 0.3s; /* Smooth transition for hover effects */
+}
+
+button:hover {
+  box-shadow: inset 8px 8px 15px #a3a3a3, /* Inset shadow on hover */
+              inset -8px -8px 15px #ffffff; /* Inset shadow on hover */
+}
+
+/* CSS for the container */
+.container {
+    width: 700px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container */
+    text-align: left; /* Keep content aligned to the left */
+  }

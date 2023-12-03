@@ -1,0 +1,114 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0e5ec;
+    /* display: block;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    width: 50%;
+    margin: auto;
+}
+
+
+.cardcontainter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Space between cards */
+    width: 90%; /* Container width, can be adjusted */
+    max-width: 1200px; /* Maximum width of the container */
+    padding: 20px;
+    margin: 20px; /* Margin around the container */
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #e0e5ec;
+    border-radius: 10px;
+    box-shadow: 
+        -5px -5px 10px rgba(255, 255, 255, 0.7), 
+         5px 5px 10px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.card h3, .card p, .card a {
+    margin: 0 0 10px 0; /* Adjust margins as needed */
+    overflow: hidden; /* Prevents text from overflowing */
+    text-overflow: ellipsis; /* Adds an ellipsis to text that overflows */
+    white-space: nowrap; /* Keeps the text in a single line */
+}
+
+.separator {
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.card a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: 10px; /* Additional spacing above the link */
+}
+
+
+
+/*The underline link*/
+.links {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .link {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    margin: 10px;
+    position: relative;
+  }
+  
+  .link h1 {
+    font-size: 2em; /* Adjust as needed */
+    margin: 0; /* Remove default margin */
+    line-height: 1.2; /* Adjust for proper line height */
+    color: #000000; /* Font color */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  
+  .underline {
+    display: inline-block; /* To contain the h1 properly */
+    border: 2px solid transparent;
+  }
+  .underline::after {
+    width: 0%;
+    height: 2px;
+    display: block;
+    background-color: #0056b3;
+    content: " ";
+    position: absolute;
+    top: 100%; /* Adjust to sit below the h1 */
+    left: 50%;
+    transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .underline:hover::after {
+    width: 100%;
+    left: 0;
+  }

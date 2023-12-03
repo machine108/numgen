@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Generator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="triangular3.css">
+</head>
+<body>
+
+<div class="container">
+
+    <section class="links">
+
+        <a class="link underline" href="index.html">
+            <h1 class="underline">Number Generators</h1>
+        </a>
+      
+      </section>
+
+<!-- Triangular Number Generator Section -->
+<h2>Triangular Number Generator</h2>
+<p>Enter the specific digits to generate two-digit triangular numbers.</p>
+<label for="firstDigitT">Enter the 1st digit (or leave blank to skip):</label>
+<input type="text" id="firstDigitT" maxlength="1"><br><br>
+<label for="secondDigitT">Enter the 2nd digit (or leave blank to skip):</label>
+<input type="text" id="secondDigitT" maxlength="1"><br><br>
+<button onclick="generateTriangular()">Generate Triangular Numbers</button>
+<p id="triangularResult"></p>
+
+</div>
+<script>
+// Triangular Number Generator Functions
+function isTriangular(n) {
+    let x = (-1 + Math.sqrt(1 + 8 * n)) / 2;
+    return x === Math.floor(x);
+}
+
+function generateTriangular() {
+    let firstDigit = document.getElementById('firstDigitT').value;
+    let secondDigit = document.getElementById('secondDigitT').value;
+    let results = [];
+    for (let i = 10; i < 100; i++) {
+        if (isTriangular(i)) {
+            let strNum = i.toString();
+            if (firstDigit && strNum.charAt(0) !== firstDigit) continue;
+            if (secondDigit && strNum.charAt(1) !== secondDigit) continue;
+            results.push(i);
+        }
+    }
+    document.getElementById('triangularResult').innerText = "Triangular numbers: " + results.join(", ");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Generator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="triangular3.css">
+</head>
+<body>
+
+<div class="container">
+    <section class="links">
+
+        <a class="link underline" href="index.html">
+            <h1 class="underline">Number Generators</h1>
+        </a>
+      
+      </section>
+
+<!-- Prime Number Generator Section -->
+<h2>Prime Number Generator</h2>
+<p>Enter the specific digits to generate three-digit prime numbers.</p>
+<label for="firstDigitP">Enter the 1st digit (or leave blank to skip):</label>
+<input type="text" id="firstDigitP" maxlength="1"><br><br>
+<label for="secondDigitP">Enter the 2nd digit (or leave blank to skip):</label>
+<input type="text" id="secondDigitP" maxlength="1"><br><br>
+<label for="thirdDigitP">Enter the 3rd digit (or leave blank to skip):</label>
+<input type="text" id="thirdDigitP" maxlength="1"><br><br>
+<button onclick="generatePrimes()">Generate Prime Numbers</button>
+<p id="primeResult"></p>
+</div>
+<script>
+
+// Prime Number Generator Functions
+function isPrime(n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true;
+    if (n % 2 === 0 || n % 3 === 0) return false;
+    let i = 5;
+    while (i * i <= n) {
+        if (n % i === 0 || n % (i + 2) === 0) return false;
+        i += 6;
+    }
+    return true;
+}
+
+function generatePrimes() {
+    let firstDigit = document.getElementById('firstDigitP').value;
+    let secondDigit = document.getElementById('secondDigitP').value;
+    let thirdDigit = document.getElementById('thirdDigitP').value;
+    let results = [];
+    for (let i = 100; i < 1000; i++) {
+        if (isPrime(i)) {
+            let strNum = i.toString();
+            if (firstDigit && strNum.charAt(0) !== firstDigit) continue;
+            if (secondDigit && strNum.charAt(1) !== secondDigit) continue;
+            if (thirdDigit && strNum.charAt(2) !== thirdDigit) continue;
+            results.push(i);
+        }
+    }
+    document.getElementById('primeResult').innerText = "Prime numbers: " + results.join(", ");
+}
+</script>
+</body>
+</html>
